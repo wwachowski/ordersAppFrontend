@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  loginVerify(): void {
+       window.alert('It works!');
+     }
+
 }
