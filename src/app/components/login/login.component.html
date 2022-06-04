@@ -3,12 +3,12 @@
   <form class="login-form">
     <mat-form-field appearance="fill">
       <mat-label>Login</mat-label>
-      <input matInput type="text" name="login" placeholder="">
+      <input matInput [(ngModel)]="username" type="text" name="login" placeholder="Enter username">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput type="password" name="password" placeholder="">
+      <input matInput [(ngModel)]="password" type="password" name="password" placeholder="Enter password">
     </mat-form-field>
 
     <input mat-raised-button color="primary" type="button" (click)="loginVerify()" value="log in">
