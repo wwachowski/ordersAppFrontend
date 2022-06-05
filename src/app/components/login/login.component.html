@@ -1,6 +1,6 @@
 <div class="login-wrapper">
 
-  <form class="login-form">
+  <form class="login-form" (submit)="loginVerify()">
     <mat-form-field appearance="fill">
       <mat-label>Login</mat-label>
       <input matInput type="text" name="login" placeholder="">
@@ -11,8 +11,9 @@
       <input matInput type="password" name="password" placeholder="">
     </mat-form-field>
 
-    <input mat-raised-button color="primary" type="button" (click)="loginVerify()" value="log in">
+    <input mat-raised-button color="primary" type="submit"  value="log in">
 
   </form>
 </div>
+
 
