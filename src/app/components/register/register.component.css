@@ -1,0 +1,20 @@
+.register-wrapper{
+  width:300px;
+  height: 400px;
+  color:green;
+  display:flex;
+background-color: #61645f;
+justify-content: center;
+}
+.register-form{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.register-form input{
+  margin: 10px;
+}
