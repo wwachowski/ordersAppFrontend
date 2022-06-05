@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,21 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
-  loginVerify(): void {
-       window.alert(this.username);
-     }
+  login(): void {
+    if (this.loginVerify()) {
+      //TODO: perform HTTP requests
+    } else { 
+      //TODO: display message error 
+    }
+  }
 
+  loginVerify(): boolean {
+    const username = this.username.trim();
+    return username.length && this.password.length ? true : false;
+  }
 }

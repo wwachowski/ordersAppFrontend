@@ -1,6 +1,6 @@
 <div class="login-wrapper">
 
-  <form class="login-form" (submit)="loginVerify()">
+  <form class="login-form" (submit)="login()">
     <mat-form-field appearance="fill">
       <mat-label>Login</mat-label>
       <input matInput [(ngModel)]="username" type="text" name="login" placeholder="Enter username">
@@ -11,9 +11,7 @@
       <input matInput [(ngModel)]="password" type="password" name="password" placeholder="Enter password">
     </mat-form-field>
 
-    <input mat-raised-button color="primary" type="submit"  value="log in">
+    <input mat-raised-button color="primary" type="submit" value="log in">
 
   </form>
 </div>
-
-
