@@ -3,17 +3,17 @@
   <form class="register-form" (submit)="registerVerify()">
     <mat-form-field appearance="fill">
       <mat-label>Login</mat-label>
-      <input matInput type="text" name="login" placeholder="">
+      <input matInput [(ngModel)]="username" type="text" name="login" placeholder="">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput type="password" name="password" placeholder="">
+      <input matInput [(ngModel)]="password" type="password" name="password" placeholder="">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Re-enter password</mat-label>
-      <input matInput type="password" name="password-check" placeholder="">
+      <input matInput [(ngModel)]="passwordRetyped" type="password" name="password-check" placeholder="">
     </mat-form-field>
 
     <input mat-raised-button color="primary" type="submit"  value="register">
