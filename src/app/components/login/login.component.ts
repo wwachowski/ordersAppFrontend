@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
 
   username: string = '';
   password: string = '';
+  token: string = '';
 
   constructor(private userService: UserService) { }
 
@@ -18,8 +19,13 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     if (this.loginVerify()) {
-      //TODO: perform HTTP requests
-    } else { 
+      this.userService.login(this.username, this.password)
+        .subscribe({
+          complete: () => { alert("Completed") },
+          error: (err) => { alert(err) },
+          next: res => { alert(res); JSON.stringify(res); }
+        });
+    } else {
       //TODO: display message error 
     }
   }

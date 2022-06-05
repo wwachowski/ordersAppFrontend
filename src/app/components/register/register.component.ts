@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/data/models/user';
 
 @Component({
   selector: 'app-register',
@@ -19,8 +20,13 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     if (this.registerVerify()) {
-      //TODO: perform HTTP requests
-    } else { 
+      this.userService.register(this.username, this.password)
+        .subscribe({
+          complete: () => { alert("Completed") },
+          error: (err) => { alert(err) },
+          next: (res) => { alert(res) }
+        });
+    } else {
       //TODO: display message error 
     }
   }
