@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './materials/material/material.module';
 
 import { AppComponent } from './app.component';
@@ -20,9 +21,10 @@ import { Globals } from 'src/globals';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [Globals],
   bootstrap: [AppComponent]
