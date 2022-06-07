@@ -1,13 +1,12 @@
-.login-wrapper{
-  width:300px;
-  height: 400px;
-  color: white;
-  display:flex;
-  background-color: #61645f;
+.login-wrapper {
+  height: 100%;
+  color: #700f43;
+  display: flex;
+  background-color: #6a696e;
   justify-content: center;
 }
 
-.login-form{
+.login-form {
   display: flex;
   justify-items: center;
   flex-direction: column;
@@ -17,8 +16,24 @@
   align-items: stretch;
 }
 
-.login-form input{
+.login-form input {
   margin: .5em;
+}
+
+.link-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: .5em;
+}
+
+.link-wrapper>a {
+  text-decoration: none;
+  color: #0000FF;
+}
+
+.link-wrapper>a:hover {
+  text-decoration: none;
+  color: #2c2cff;
 }
 
 mat-form-field {
@@ -32,12 +47,13 @@ button {
 
 ::ng-deep.mat-focused.mat-form-field-label {
   color: white !important;
- }
+}
 
 ::ng-deep.mat-form-field-ripple {
- background-color: white !important;;
+  background-color: white !important;
+  ;
 }
 
 ::ng-deep.mat-form-field-underline {
   background-color: white !important;
-} 
+}

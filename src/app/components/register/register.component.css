@@ -1,9 +1,8 @@
 .register-wrapper{
-  width:300px;
-  height: 400px;
-  color:white;
+  height: 100%;
+  color: #700f43;
   display:flex;
-  background-color: #61645f;
+  background-color: #6a696e;
   justify-content: center;
 }
 
@@ -19,6 +18,22 @@
 
 .register-form input{
   margin: .5em;
+}
+
+.link-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: .5em;
+}
+
+.link-wrapper > a {
+  text-decoration: none;
+  color: #0000FF;
+}
+
+.link-wrapper > a:hover {
+  text-decoration: none;
+  color: #2c2cff;
 }
 
 mat-form-field {
