@@ -26,6 +26,10 @@ mat-form-field {
   font-weight: 500;
 }
 
+button {
+  margin-top: 1em;
+}
+
 ::ng-deep.mat-focused.mat-form-field-label {
   color: white !important;
  }

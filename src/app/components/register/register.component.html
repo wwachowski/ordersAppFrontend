@@ -1,22 +1,28 @@
 <div class="register-wrapper">
+  <form class="register-form" (submit)="onSubmit()" #userForm="ngForm">
 
-  <form class="register-form" (submit)="register()">
-    <mat-form-field appearance="fill">
-      <mat-label>Login</mat-label>
-      <input matInput [(ngModel)]="username" type="text" name="login" placeholder="">
+    <mat-form-field hideRequiredMarker appearance="fill">
+      <mat-label>Enter your username</mat-label>
+      <input matInput #login="ngModel" ngModel type="text" name="username" required minlength="3">
+      <mat-error *ngIf="login.errors?.['minlength']">Username must be at least 3 characters long.</mat-error>
+      <mat-error *ngIf="login.errors?.['required']">Username must be provided.</mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput [(ngModel)]="password" type="password" name="password" placeholder="">
+    <mat-form-field hideRequiredMarker appearance="fill">
+      <mat-label>Enter password</mat-label>
+      <input matInput #pass="ngModel" ngModel type="password" name="password" required minlength="3">
+      <mat-error *ngIf="pass.errors?.['minlength']">Password must be at least 3 characters long.</mat-error>
+      <mat-error *ngIf="pass.errors?.['required']">Password must be provided.</mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field hideRequiredMarker appearance="fill">
       <mat-label>Re-enter password</mat-label>
-      <input matInput [(ngModel)]="passwordRetyped" type="password" name="password-check" placeholder="">
+      <input matInput #passRetyped="ngModel" ngModel type="password" name="passwordRetyped" required minlength="3">
+      <mat-error *ngIf="passRetyped.errors?.['minlength']">Password must be at least 3 characters long.</mat-error>
+      <mat-error *ngIf="passRetyped.errors?.['required']">Password must be provided.</mat-error>
     </mat-form-field>
 
-    <input mat-raised-button color="primary" type="submit"  value="register">
+    <button mat-raised-button color="primary" type="submit">Sign Up</button>
 
   </form>
 </div>

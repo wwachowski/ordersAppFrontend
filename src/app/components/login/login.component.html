@@ -3,7 +3,7 @@
 
     <mat-form-field hideRequiredMarker appearance="fill">
       <mat-label>Enter your username</mat-label>
-      <input matInput #login="ngModel" ngModel type="text" name="username" required minlength="3" color="primary">
+      <input matInput #login="ngModel" ngModel type="text" name="username" required minlength="3">
       <mat-error *ngIf="login.errors?.['minlength']">Username must be at least 3 characters long.</mat-error>
       <mat-error *ngIf="login.errors?.['required']">Username must be provided.</mat-error>
     </mat-form-field>
