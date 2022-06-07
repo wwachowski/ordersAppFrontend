@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = '';
-  password: string = '';
+  @ViewChild('userForm') form!: NgForm;
   token: string = '';
 
   constructor(private userService: UserService) { }
@@ -17,21 +17,23 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    this.login();
+  }
+
   login(): void {
     if (this.loginVerify()) {
-      this.userService.login(this.username, this.password)
+      this.userService.login(this.form.value.username, this.form.value.password)
         .subscribe({
           complete: () => { alert("Completed") },
           error: (err) => { alert(err) },
-          next: res => { alert(res); JSON.stringify(res); }
+          next: (res) => { alert(res) }
         });
-    } else {
-      //TODO: display message error 
     }
   }
 
   loginVerify(): boolean {
-    const username = this.username.trim();
-    return username.length && this.password.length ? true : false;
+    const username = this.form.value.username.trim();
+    return username.length && this.form.value.password ? true : false;
   }
 }
