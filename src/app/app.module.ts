@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Globals } from 'src/globals';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { Globals } from 'src/globals';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [Globals],
+  providers: [Globals, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

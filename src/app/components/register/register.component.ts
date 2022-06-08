@@ -24,9 +24,12 @@ export class RegisterComponent implements OnInit {
     if (this.registerVerify()) {
       this.userService.register(this.form.value.username, this.form.value.password)
         .subscribe({
-          complete: () => { alert("Completed") },
-          error: (err) => { alert(err) },
-          next: (res) => { alert(res) }
+          error: (err) => {
+            //TODO: Handle errors and display for user 
+          },
+          next: (isCreated: boolean) => {
+            isCreated ? alert("User registered") : alert("User already exists");
+          }
         });
     }
   }

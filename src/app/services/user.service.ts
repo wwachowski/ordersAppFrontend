@@ -20,6 +20,7 @@ export class UserService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiKey}/login`, { username: username, password: password });
+    return this.http.post(`${this.apiKey}/login`,
+      { username: username, password: password }, { observe: 'response' });
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('userForm') form!: NgForm;
   token: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
   }
@@ -25,9 +26,13 @@ export class LoginComponent implements OnInit {
     if (this.loginVerify()) {
       this.userService.login(this.form.value.username, this.form.value.password)
         .subscribe({
-          complete: () => { alert("Completed") },
-          error: (err) => { alert(err) },
-          next: (res) => { alert(res) }
+          error: (err) => { 
+            //TODO: Handle errors and display for user 
+          },
+          next: (res) => { 
+            let token = res.headers.get('authorization');
+            this.localStorageService.set("token", token);
+          }
         });
     }
   }
