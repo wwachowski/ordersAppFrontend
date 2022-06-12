@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
           },
           next: (res) => { 
             let token = res.headers.get('authorization');
-            this.localStorageService.set("token", token);
+            this.localStorageService.set('token', token);
           }
         });
     }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   @ViewChild('userForm') form!: NgForm;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +30,7 @@ export class RegisterComponent implements OnInit {
             //TODO: Handle errors and display for user 
           },
           next: (isCreated: boolean) => {
-            isCreated ? alert("User registered") : alert("User already exists");
+            isCreated ? this.router.navigate(['/login']) : alert("User already exists");
           }
         });
     }
