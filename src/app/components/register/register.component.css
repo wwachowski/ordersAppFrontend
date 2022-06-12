@@ -1,12 +1,12 @@
-.login-wrapper {
+.register-wrapper{
   height: 100%;
   color: #700f43;
-  display: flex;
+  display:flex;
   background-color: #6a696e;
   justify-content: center;
 }
 
-.login-form {
+.register-form{
   display: flex;
   justify-items: center;
   flex-direction: column;
@@ -16,7 +16,7 @@
   align-items: stretch;
 }
 
-.login-form input {
+.register-form input{
   margin: .5em;
 }
 
@@ -26,12 +26,12 @@
   margin-top: .5em;
 }
 
-.link-wrapper>a {
+.link-wrapper > a {
   text-decoration: none;
   color: #0000FF;
 }
 
-.link-wrapper>a:hover {
+.link-wrapper > a:hover {
   text-decoration: none;
   color: #2c2cff;
 }
@@ -47,13 +47,14 @@ button {
 
 ::ng-deep.mat-focused.mat-form-field-label {
   color: white !important;
-}
+ }
 
 ::ng-deep.mat-form-field-ripple {
-  background-color: white !important;
-  ;
+ background-color: white !important;;
 }
 
 ::ng-deep.mat-form-field-underline {
   background-color: white !important;
-}
+} 
+
+

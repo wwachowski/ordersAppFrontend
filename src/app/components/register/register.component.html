@@ -1,5 +1,5 @@
-<div class="login-wrapper">
-  <form class="login-form" (submit)="onSubmit()" #userForm="ngForm">
+<div class="register-wrapper">
+  <form class="register-form" (submit)="onSubmit()" #userForm="ngForm">
 
     <mat-form-field hideRequiredMarker appearance="fill">
       <mat-label>Enter your username</mat-label>
@@ -9,15 +9,22 @@
     </mat-form-field>
 
     <mat-form-field hideRequiredMarker appearance="fill">
-      <mat-label>Enter your password</mat-label>
+      <mat-label>Enter password</mat-label>
       <input matInput #pass="ngModel" ngModel type="password" name="password" required minlength="3">
       <mat-error *ngIf="pass.errors?.['minlength']">Password must be at least 3 characters long.</mat-error>
       <mat-error *ngIf="pass.errors?.['required']">Password must be provided.</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Log In</button>
+    <mat-form-field hideRequiredMarker appearance="fill">
+      <mat-label>Re-enter password</mat-label>
+      <input matInput #passRetyped="ngModel" ngModel type="password" name="passwordRetyped" required minlength="3">
+      <mat-error *ngIf="passRetyped.errors?.['minlength']">Password must be at least 3 characters long.</mat-error>
+      <mat-error *ngIf="passRetyped.errors?.['required']">Password must be provided.</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Sign Up</button>
     <div class="link-wrapper">
-      <a routerLink="/register">Sign Up</a>
+      <a routerLink="/login">Log In</a>
     </div>
   </form>
 </div>
