@@ -11,8 +11,17 @@ export class LocalStorageService {
     localStorage.setItem(key, item);
   }
 
-  get(key: string): any {
+  setObj(key: string, item: object): void {
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  get(key: string): string | null {
     return localStorage.getItem(key);
+  }
+
+  getObj(key: string): object | null {
+    let val = localStorage.getItem(key);
+    return val && JSON.parse(val);
   }
 
   remove(key: string): void {
