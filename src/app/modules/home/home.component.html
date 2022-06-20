@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="container">
+    <div class="card" *ngFor="let order of orders">
+        <span><h2>{{order.title}}</h2><h1>{{order.price}}</h1></span>
+        <span><p>{{order.desc}}</p></span>
+        <span>Client: {{order.client}}</span>
+        <span>Date: {{order.date}}</span>
+    </div>
+</div>
