@@ -1,0 +1,47 @@
+.card {
+    --border-radius: 1.35em;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    background-color: var(--main-clr);
+    color: rgb(255, 255, 255);
+    width: 30rem;
+    height: 10rem;
+    border-radius: var(--border-radius);
+    border-top-left-radius: calc(var(--border-radius) * 2.8);
+    border-bottom-right-radius: calc(var(--border-radius) * 2.8);
+    padding: .5em;
+
+    -webkit-box-shadow: 2px 7px 26px -8px var(--main-clr);
+    -moz-box-shadow: 2px 7px 26px -8px var(--main-clr);
+    box-shadow: 2px 7px 26px -8px var(--main-clr);
+}
+
+.state-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 5rem;
+    width: 5rem;
+    z-index: -1;
+    border-bottom-right-radius: calc(var(--border-radius));
+}
+
+.title {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.ctn-1 {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.ctn-1 p {
+    margin-left: 1.5rem;
+}
+
+.ctn-2 {
+    align-items: center;
+    justify-content: flex-start;
+}

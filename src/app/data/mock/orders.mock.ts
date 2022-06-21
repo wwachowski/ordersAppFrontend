@@ -31,7 +31,7 @@ export const ORDERS: Order[] = [
         price: 65.45,
         client: 'Arbuziak Piotr',
         quantity: 1,
-        date: new Date(),
+        date: new Date('2025/05/07'),
         completed: false
     },
     {
@@ -42,7 +42,7 @@ export const ORDERS: Order[] = [
         price: 30.909,
         client: 'Koraz',
         quantity: 30,
-        date: new Date(),
+        date: new Date('2021/11/09'),
         completed: false
     },
     {
@@ -54,6 +54,6 @@ export const ORDERS: Order[] = [
         client: 'Arbuziak Piotr',
         quantity: 1,
         date: new Date(),
-        completed: false
+        completed: true
     },
 ];

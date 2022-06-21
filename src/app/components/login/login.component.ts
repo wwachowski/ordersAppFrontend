@@ -14,8 +14,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('userForm') form!: NgForm;
-  user?: User;
+  @ViewChild('userForm') public form!: NgForm;
+  private user?: User;
 
   constructor(
     private userService: UserService, 
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.login();
   }
 
-  login(): void {
+  private login(): void {
     if (this.loginVerify()) {
       this.userService.login(this.form.value.username, this.form.value.password)
         .subscribe({
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
             //TODO: Handle errors and display for user 
           },
           next: (res) => { 
-            let token: string = res.headers.get('authorization');
+            const token: string = res.headers.get('authorization');
             this.user = {id: 0, username: this.form.value.username, token: token};
             console.log(res);
             this.localStorageService.setObj('user', this.user);
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  loginVerify(): boolean {
+  private loginVerify(): boolean {
     const username = this.form.value.username.trim();
     return username.length && this.form.value.password ? true : false;
   }
