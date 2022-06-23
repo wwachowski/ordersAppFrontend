@@ -56,4 +56,15 @@ export const ORDERS: Order[] = [
         date: new Date(),
         completed: true
     },
+    {
+        id: 6,
+        userId: 1,
+        title: 'kubuś 300ml',
+        desc: 'marchewka, pomidor',
+        price: 4.99,
+        client: 'Kangurek Kuro',
+        quantity: 15,
+        date: new Date('2022/09/11'),
+        completed: true
+    },
 ];

@@ -1,15 +1,20 @@
-<div class="card">
+<div class="ctn-card" (click)="displayDialog(order)">
     <div class="state-indicator" [style.background-color]="indicatorColor"></div>
-    <div class="ctn-1 flex-col center w-70">
-        <div class="ctn-2 flex-row w-100">
-            <h1 class="title"><p>{{order.title}}</p></h1>
-            <p>x{{order.quantity}}</p>
+    <div class="card" matRipple>
+        <!-- <div class="ctn-icon" matRipple>
+            <mat-icon>done</mat-icon>
+        </div> -->
+
+        <div class="ctn-1 flex-col center w-70">
+            <div class="ctn-2 flex-row w-100">
+                <h1 class="title">{{order.title}}</h1>
+                <p>x{{order.quantity}}</p>
+            </div>
+            <p>Client: {{order.client}}</p>
         </div>
-        <p>Client: {{order.client}}</p>
+        <div class="ctn-3 flex-col center w-30">
+            <h3>Deadline</h3>
+            <h2>{{order.date | date: 'YYYY-MM-dd'}}</h2>
+        </div>
     </div>
-    <div class="flex-col center w-30">
-        <h3>Deadline</h3>
-        <h2>{{order.date | date: 'YYYY-MM-dd'}}</h2>
-    </div>
-    <mat-icon>delete</mat-icon>
 </div>
