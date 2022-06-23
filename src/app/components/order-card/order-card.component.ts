@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { Order } from 'src/app/data/models/order';
+import { OrderFormComponent } from '../order-form/order-form.component';
 
 @Component({
   selector: 'app-order-card',
@@ -9,12 +12,18 @@ import { Order } from 'src/app/data/models/order';
 export class OrderCardComponent implements OnInit {
 
   @Input() order!: Order;
-  public indicatorColor!: string;
+  public indicatorColor: string = 'white';
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.indicatorColor = this.getIndicatorColor();
+    // this.indicatorColor = this.getIndicatorColor();
+  }
+
+  public displayDialog(order: Order): void {
+    this.dialog.open(OrderFormComponent, {
+      data: { order: this.order }
+    });
   }
 
   private getIndicatorColor(): IndicatorStateColor {
