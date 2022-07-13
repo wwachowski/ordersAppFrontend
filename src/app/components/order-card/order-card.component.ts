@@ -20,10 +20,17 @@ export class OrderCardComponent implements OnInit {
     // this.indicatorColor = this.getIndicatorColor();
   }
 
-  public displayDialog(order: Order): void {
+  public displayDialog(): void {
     this.dialog.open(OrderFormComponent, {
-      data: { order: this.order }
-    });
+      data: this.order
+    }).afterClosed()
+      .subscribe(data => {
+        if (!!data) {
+          //TODO: Perform actual HTTP POST request
+          this.order = data
+          // local change ^
+        }; 
+      });
   }
 
   private getIndicatorColor(): IndicatorStateColor {

@@ -1,8 +1,43 @@
 <h1 mat-dialog-title="Order edit form"></h1>
 <mat-dialog-content>
-    <span>form to be made!</span>
+    <form [formGroup]="orderForm">
+        <div class="flex-row">
+            <div class="w-50 ctn-1">
+                <mat-form-field appearance="fill">
+                    <mat-label>Order's title</mat-label>
+                    <input type="text" matInput formControlName="title">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Client name</mat-label>
+                    <input type="text" matInput formControlName="client">
+                </mat-form-field>
+            </div>
+            <div class="w-50 ctn-1">
+                <div class="ctn-2">
+                    <mat-form-field class="mat-form-num" appearance="fill">
+                        <mat-label>Price</mat-label>
+                        <input type="number" matInput formControlName="price">
+                    </mat-form-field>
+                    <mat-form-field class="mat-form-num" appearance="fill">
+                        <mat-label>Quantity</mat-label>
+                        <input type="number" matInput formControlName="quantity">
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Order's description</mat-label>
+            <textarea matInput formControlName="desc" rows="2" style="resize:none" maxlength="125"></textarea>
+        </mat-form-field>
+    </form>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true">Apply</button>
+    <button mat-button (click)="closeDialog()">Apply</button>
 </mat-dialog-actions>
